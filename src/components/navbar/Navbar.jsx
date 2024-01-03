@@ -1,9 +1,12 @@
 import Links from "./links/Links";
+import styles from './navbar.module.css';
 
 const NavBar = () => {
   return (
-    <div>
-        <div>Logo</div>
+    <div className={styles.container}>
+        <div className={styles.logo}>
+            RoamIO
+        </div>
         <div>
             <Links />
         </div>

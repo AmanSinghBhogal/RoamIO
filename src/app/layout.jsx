@@ -17,9 +17,11 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/assets/images/icon.jpg" sizes="any" />
       </head>
       <body className={inter.className}>
-        <NavBar />
-        {children}
-        <Footer />
+        <div className='container'>
+          <NavBar />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   )
