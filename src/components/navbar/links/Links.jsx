@@ -1,26 +1,30 @@
+"use client";
+import { useState } from 'react';
 import NavLink from './NavLink/NavLink';
 import styles from './links.module.css';
 
+const links = [
+    {
+        title: 'Home',
+        path: '/'
+    },
+    {
+        title: 'Blogs',
+        path: '/blog'
+    },
+    {
+        title: 'About',
+        path: '/about'
+    },
+    {
+        title: 'Contact',
+        path: '/contact'
+    },
+];
+
 const Links = () => {
 
-    const links = [
-        {
-            title: 'Home',
-            path: '/'
-        },
-        {
-            title: 'Blogs',
-            path: '/blog'
-        },
-        {
-            title: 'About',
-            path: '/about'
-        },
-        {
-            title: 'Contact',
-            path: '/contact'
-        },
-    ];
+    const [open, setOpen] = useState(false);
 
     // To be changed soon
     const session = true;
@@ -28,10 +32,32 @@ const Links = () => {
 
     return (
         <div className={styles.container}>
-            {links.map((link) => (
-                <NavLink item={link} key={link.title} />
-            ))}{
-                session? (<div>Duck</div>) : (<div>Fuck</div>)
+            <div className={styles.links}>
+                {links.map((link) => (
+                    <NavLink item={link} key={link.title} />
+                ))}{
+                    session? (
+                        <>
+                            {isAdmin && (<NavLink item={{title: "Admin", path: "/admin"}} />)}
+                            <button className={styles.logout}>Logout</button>
+                        </>
+                    ) : (
+                        <NavLink item={{title: "Login", path: "/login"}} />    
+                    )
+                }
+            </div>
+            <button className={styles.menuBtn} onClick={() => setOpen(prev => !prev)}>Menu</button>
+            {
+                open && (
+                    <div className={styles.mobileLinks}>
+                        {
+                            links.map((link) => 
+                                <NavLink item={link} key={link.title} />
+                            )
+                        }
+
+                    </div>
+                )
             }
         </div>
     )
