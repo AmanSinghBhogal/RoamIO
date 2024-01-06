@@ -1,0 +1,26 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 20px;
+}
+
+.org{
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+}
+
+.logo{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.year{
+    font-size: 12px;
+}
+
+.text{
+    font-size: 14px;
+}
