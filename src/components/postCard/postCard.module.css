@@ -21,6 +21,14 @@
     font-size: 12px;
 }
 
+.bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5px;
+}
+
 .ImgContainer{
     position: relative;
     height: 300px;
