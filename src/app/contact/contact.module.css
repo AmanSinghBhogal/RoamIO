@@ -4,6 +4,7 @@
     align-items: center;
     min-height: 90vh;
     gap: 100px;
+    padding: 20px 0;
 }
 
 .imgContainer{
@@ -18,6 +19,14 @@
 
 .formContainer{
     width: 50%;
+}
+@media (max-width: 768px) {
+    .container{
+        flex-direction: column;
+    }
+    .formContainer{
+        width: 80%;
+    }
 }
 
 .form{
