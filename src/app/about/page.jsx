@@ -24,7 +24,7 @@ const About = () => {
           </div>
         </div>
         <div className={styles.imgContainer}>
-          <Image src="/assets/images/about.png" alt="About Page Img" fill className={styles.img}/>
+          <Image src="/assets/images/about.png" alt="About Page Img" width={450} height={450} className={styles.img}/>
         </div>
     </div>
   )

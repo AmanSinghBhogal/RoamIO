@@ -28,11 +28,6 @@
     font-weight: 300;
 }
 
-.imgContainer{
-    position: relative;
-    width: 400px;
-    height: 400px;
-}
 
 .boxes{
     display: flex;

@@ -9,7 +9,7 @@
 }
 
 .textContainer{
-    width: 50%;
+    flex: 1;
     flex-direction: column;
     display: flex;
     gap: 30px;

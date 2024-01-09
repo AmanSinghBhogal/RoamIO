@@ -5,12 +5,7 @@
     min-height: 90vh;
     gap: 100px;
     padding: 20px 0;
-}
-
-.imgContainer{
-    position: relative;
-    width: 400px;
-    height: 400px;
+    flex-wrap: wrap;
 }
 
 .img{
@@ -18,8 +13,9 @@
 }
 
 .formContainer{
-    width: 50%;
+    flex: 1;
 }
+
 @media (max-width: 768px) {
     .container{
         flex-direction: column;
