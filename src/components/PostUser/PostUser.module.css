@@ -1,0 +1,17 @@
+.container span:first-child{
+    color: gray;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.detailTitle{
+    font-weight: bold;
+}
+
+.detailValue{
+    font-weight: 500;
+}
