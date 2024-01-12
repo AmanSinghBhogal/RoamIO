@@ -1,3 +1,6 @@
+import { Post, User } from "./models";
+import { connectToDB } from "./utils";
+
 const users = [
     {
         id: 1,
@@ -39,13 +42,51 @@ const posts = [
 
 
 export const getPosts = async () => {
-    return posts;
+    try {
+        connectToDB();
+        const Posts = await Post.find();
+        return Posts;
+        
+    } catch (error) {
+        console.log(error);
+        throw new Error("Failed to fetch posts");
+    }
 };
 
-export const getPost = async (postId) => {
-    return posts.find((post) => post.id === parseInt(postId));
+export const getPost = async (Inslug) => {
+    try {
+        connectToDB();
+        const post = await Post.find({slug: Inslug});
+        return post;
+        
+    } catch (error) {
+        console.log(error);
+        throw new Error("Failed to fetch post by Slug");
+    }
+}
+
+export const getUsers = async () => {
+    try {
+
+        connectToDB();
+        const users = await User.find();
+        return users;
+
+    } catch (error) {
+        console.log(error);
+        throw new Error("Failed to fetch all users");
+    }
 }
 
 export const getUser = async (id) => {
-    return users.find((user) => user.id === parseInt(id));
+    try {
+
+        connectToDB();
+        const user = await User.findById(id);
+        return user;
+        
+    } catch (error) {
+        console.log(error);
+        throw new Error("Failed to fetch user by _id");
+    }
 }
