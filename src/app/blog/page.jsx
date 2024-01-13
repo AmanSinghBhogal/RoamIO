@@ -2,6 +2,12 @@ import styles from './blogs.module.css';
 import PostCard from '@/components/postCard/PostCard';
 import { getPosts } from '@/lib/data';
 
+export const metadata = {
+  title: 'Blogs',
+  description: 'RoamIO Blog Page',
+}
+
+
 const Blogs = async () => {
 
   const posts = await getPosts();

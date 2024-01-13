@@ -1,6 +1,12 @@
 import Image from "next/image";
 import styles from './about.module.css';
 
+export const metadata = {
+  title: 'About',
+  description: 'RoamIO About Page',
+}
+
+
 const About = () => {
   return (
     <div className={styles.container}>

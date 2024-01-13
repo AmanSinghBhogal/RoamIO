@@ -2,6 +2,12 @@
 import styles from './contact.module.css';
 import Image from 'next/image';
 
+// export const metadata = {
+//   title: 'Contact',
+//   description: 'RoamIO Contact Page',
+// }
+
+
 const Contact = () => {
 
   const handleSubmit = (e) => {

@@ -6,7 +6,10 @@ import Footer from '@/components/footer/Footer';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'RoamIo',
+  title: {
+    default: "RoamIO Home",
+    template: "RoamIO | %s"
+  },
   description: 'RoamIO - Unleash Your Wanderlust, One Journey at a Time!',
 }
 
