@@ -27,7 +27,7 @@ const SingleBlog = async ({params}) => {
           </div>
         </div>
         <div className={styles.content}>
-            {post.body}
+            {post.desc}
         </div>
       </div>
     </div>
