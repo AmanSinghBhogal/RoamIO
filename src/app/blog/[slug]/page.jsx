@@ -4,6 +4,17 @@ import { getPost } from '@/lib/data';
 import PostUser from '@/components/PostUser/PostUser';
 
 
+// Generating dynamic Page Title and meta data
+export const generateMetadata = async ({ params }) => {
+    const { slug } = params;
+    const post = await getPost(slug); 
+    return{
+      title: post.title,
+      description: post.desc
+    };
+}
+
+
 const SingleBlog = async ({params}) => {
 
   const { slug } = params;
