@@ -1,16 +1,17 @@
-"use client";
 import styles from './contact.module.css';
 import Image from 'next/image';
 
-// export const metadata = {
-//   title: 'Contact',
-//   description: 'RoamIO Contact Page',
-// }
+export const metadata = {
+  title: 'Contact',
+  description: 'RoamIO Contact Page',
+}
 
 
 const Contact = () => {
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (formData) => {
+    "use server"
+    console.log(formData);
   }
 
   return (
