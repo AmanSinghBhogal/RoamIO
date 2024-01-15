@@ -16,8 +16,9 @@
     align-items: center;
 }
 
-.top span{
+.date {
     transform: rotate(270deg);
+    text-wrap: nowrap;
     font-size: 12px;
 }
 
@@ -25,14 +26,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     gap: 5px;
-}
-
-.ImgContainer{
-    position: relative;
-    height: 300px;
-    width: 300px;
 }
 
 .img{
