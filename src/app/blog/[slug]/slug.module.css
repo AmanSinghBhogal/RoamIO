@@ -28,11 +28,6 @@
     gap: 20px;
 }
 
-.avatar{
-    border-radius: 50%;
-    object-fit: contain;
-}
-
 .detailText span:first-child{
     color: gray;
 }

@@ -4,7 +4,13 @@
 
 .container{
     display: flex;
+    gap: 20px;
+}
+
+.detailAuthor{
+    display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 10px;
 }
 
@@ -14,4 +20,9 @@
 
 .detailValue{
     font-weight: 500;
+}
+
+.avatar{
+    border-radius: 50%;
+    object-fit: contain;
 }
