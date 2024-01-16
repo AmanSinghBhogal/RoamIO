@@ -6,7 +6,7 @@ export const revalidate = 1; //revalidate api every 1 second
 
 export const GET = async (request, { params }) => {
     try {
-        await connectToDB();
+        connectToDB();
         const post = await Post.find({slug: params.slug});
 
         if(!post.length){
@@ -27,7 +27,7 @@ export const PATCH = async (request, { params }) => {
     const { title, desc, img } = await request.json();
 
     try {
-        await connectToDB();
+        connectToDB();
         
         const existingPost = await Post.find({slug: params.slug});
 
@@ -53,7 +53,7 @@ export const PATCH = async (request, { params }) => {
 // Delete Endpoint:
 export const DELETE = async (request, { params }) => {
     try {
-        await connectToDB();
+        connectToDB();
 
         await Post.findByIdAndDelete(params.id);
 

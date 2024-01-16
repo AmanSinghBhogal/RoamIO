@@ -6,7 +6,7 @@ export const revalidate = 1; //revalidate api every 1 second
 
 export const GET = async (request) => {
     try {
-        await connectToDB();
+        connectToDB();
 
         const users = await User.find();
 

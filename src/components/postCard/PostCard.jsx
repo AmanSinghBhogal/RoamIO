@@ -9,7 +9,7 @@ const PostCard = ({post}) => {
           <div>
             <Image src={post.img && post.img !== 'none'? post.img : "/assets/images/post.jpg" } alt='Post Image' height={300} width={300} className={styles.img} />
           </div>
-          <div className={styles.date}>{post.createdAt.toString().slice(4,15)}</div>
+          <div className={styles.date}>{post.createdAt.toString().slice(0,10)}</div>
         </div>
         <div className={styles.bottom}>
           <h1 className={styles.title}>{post.title}</h1>

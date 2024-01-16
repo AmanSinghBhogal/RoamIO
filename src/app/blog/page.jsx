@@ -1,12 +1,19 @@
 import styles from './blogs.module.css';
 import PostCard from '@/components/postCard/PostCard';
-import { getPosts } from '@/lib/data';
+// import { getPosts } from '@/lib/data';
 
 export const metadata = {
   title: 'Blogs',
   description: 'RoamIO Blog Page',
 }
 
+const getPosts = async () => {
+    const res = await fetch("http://localhost:3000/api/posts");
+    if(!res.ok){
+      throw new Error("Something went wrong while fetching posts.");
+    }
+    return res.json();
+}
 
 const Blogs = async () => {
 
