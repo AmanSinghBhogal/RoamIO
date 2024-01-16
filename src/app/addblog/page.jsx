@@ -1,4 +1,4 @@
-import { addBlog } from "@/lib/action";
+import { addBlog, deleteBlog } from "@/lib/action";
 
 const AddBlog = () => {
   return (
@@ -9,6 +9,10 @@ const AddBlog = () => {
             <input type="text" name="userId" placeholder="Enter User ID" />
             <input type="text" name="slug" placeholder="Enter Slug" />
             <input type="submit" value="Post" />
+        </form>
+        <form action={deleteBlog}>
+            <input type="text" name="id" placeholder="Enter Post id" />
+            <input type="submit" value="Delete Post" />
         </form>
     </div>
   )
