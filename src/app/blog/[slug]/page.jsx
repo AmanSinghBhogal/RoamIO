@@ -1,6 +1,6 @@
 import styles from './slug.module.css';
 import Image from 'next/image';
-import { getPost } from '@/lib/data';
+// import { getPost } from '@/lib/data';
 import PostUser from '@/components/PostUser/PostUser';
 
 
@@ -12,6 +12,17 @@ export const generateMetadata = async ({ params }) => {
       title: post.title,
       description: post.desc
     };
+}
+
+const getPost = async (slug) => {
+
+    const res = await fetch(`http://localhost:3000/api/posts/${slug}`);
+
+    if(!res.ok){
+      throw new Error("OPPs! Something went wrong!");
+    }
+
+    return res.json();
 }
 
 
@@ -31,7 +42,7 @@ const SingleBlog = async ({params}) => {
           <PostUser id={post.userId} /> 
           <div className={styles.detailText}>
             <span className={styles.detailTitle}>Published</span>
-            <span className={styles.detailValue}>{post.createdAt.toString().slice(4,15)}</span>
+            <span className={styles.detailValue}>{post.createdAt.toString().slice(0,10)}</span>
           </div>
         </div>
         <div className={styles.content}>

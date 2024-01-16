@@ -1,7 +1,15 @@
 import styles from './PostUser.module.css';
-import { getUser } from "@/lib/data";
+// import { getUser } from "@/lib/data";
 import { Suspense } from "react";
 import Image from 'next/image';
+
+const getUser = async(id) => {
+  const res = await fetch(`http://localhost:3000/api/users/${id}`);
+  if(!res.ok){
+    throw new Error("Something went wrong while fetching user Data");
+  }
+  return res.json();
+}
 
 const PostUser = async ({id}) => {
     const user = await getUser(id);

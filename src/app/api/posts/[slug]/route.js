@@ -7,9 +7,9 @@ export const revalidate = 1; //revalidate api every 1 second
 export const GET = async (request, { params }) => {
     try {
         connectToDB();
-        const post = await Post.find({slug: params.slug});
+        const post = await Post.findOne({slug: params.slug});
 
-        if(!post.length){
+        if(!post){
             return new Response("Post Not Found", { status: 404 });
         }
 
@@ -29,9 +29,9 @@ export const PATCH = async (request, { params }) => {
     try {
         connectToDB();
         
-        const existingPost = await Post.find({slug: params.slug});
+        const existingPost = await Post.findOne({slug: params.slug});
 
-        if(!existingPost.length){
+        if(!existingPost){
             return new Response("Post Not Found", { status: 404 });
         }
 
